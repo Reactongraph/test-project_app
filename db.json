@@ -1,0 +1,26 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "name": "Project Alpha",
+      "startDate": "2023-01-01",
+      "endDate": "2023-12-31",
+      "manager": "Alice",
+      "description": "Alpha Description"
+    },
+    {
+      "id": "2",
+      "name": "Project Beta",
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-31",
+      "manager": "Bob",
+      "description": "Beta Description"
+    }
+  ],
+  "favoriteProjects": [
+    {
+      "id": "1",
+      "name": "Project Alpha"
+    }
+  ]
+}
