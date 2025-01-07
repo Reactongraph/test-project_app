@@ -58,6 +58,7 @@ Create a .env file and copy content from .env.example
 
 ## Project Structure
 
+```
 src/
 ├── components/
 │ ├── atoms/        # Basic UI components
@@ -69,6 +70,7 @@ src/
 ├── utils/          # Utility functions
 ├── hooks           # resuable custom hooks
 └── App.jsx         # Main application component
+```
 
 ## Technologies Used
 
