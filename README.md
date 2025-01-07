@@ -24,8 +24,8 @@ This is a React-based project management application that allows users to edit a
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
-cd <project-directory>
+git clone https://github.com/Reactongraph/test-project_app
+cd test-project-app
 ```
 
 2. Install dependencies:
