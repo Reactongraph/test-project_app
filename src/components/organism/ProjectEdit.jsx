@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState, useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import EditProjectForm from "../molecule/EditProjectForm";
 import { Box, CircularProgress } from "@mui/material";
-import ErrorMessage from "../atoms/common/ErrorMessage";
+import ErrorMessage from "../../components/atoms/common/ErrorMessage";
 import { api } from "../../services/project-api";
 
 /**

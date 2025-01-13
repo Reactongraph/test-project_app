@@ -8,26 +8,28 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
+import { useResponsive } from "../../../hooks/useResponsive";
+
+/**
+ * Column definition type
+ * @typedef {Object} Column
+ * @property {string} key - The key to access the data in each row
+ * @property {string} label - The display label for the column header
+ */
 
 /**
  * Responsive table component that adapts to screen size
  * @param {Object} props Component props
- * @param {Array} props.columns Column definitions for the table
- * @param {Array} props.data Data to display in the table
- * @param {Function} props.renderActions Optional callback to render action buttons
+ * @param {Column[]} props.columns - Column definitions for the table
+ * @param {Object[]} props.data - Data to display in the table
+ * @param {Function} [props.renderActions] - Optional callback to render action buttons
+ * @param {string} [props.className] - Optional CSS class name
  */
-const CustomTable = ({ columns, data, renderActions }) => {
-  // Determine if viewport is mobile
-  const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
-
-  React.useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+const CustomTable = ({ columns, data, renderActions, className }) => {
+  const { isMobile } = useResponsive();
 
   return (
-    <TableContainer>
+    <TableContainer className={className}>
       <Table size={isMobile ? "small" : "medium"}>
         <TableHead>
           <TableRow>

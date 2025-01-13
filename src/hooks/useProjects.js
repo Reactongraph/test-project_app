@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { api } from "../services/project-api";
+import { useEffect, useState } from 'react';
+import { api } from '../services/project-api';
 
 /**
  * Custom hook for managing projects and favorite projects
@@ -14,18 +14,13 @@ export const useProjects = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [projectsData, favoritesData] = await Promise.all([
-          api.getProjects(),
-          api.getFavoriteProjects(),
-        ]);
+        const [projectsData, favoritesData] = await Promise.all([api.getProjects(), api.getFavoriteProjects()]);
 
         setProjects(projectsData);
         setFavoriteProjects(favoritesData);
       } catch (error) {
-        console.error("Error fetching data:", error);
-        setError(
-          error.message || "Failed to load projects. Please try again later."
-        );
+        console.error('Error fetching data:', error);
+        setError(error.message || 'Failed to load projects. Please try again later.');
       } finally {
         setIsLoading(false);
       }
@@ -40,29 +35,19 @@ export const useProjects = () => {
    */
   const handleSave = async (updatedProject) => {
     try {
-      setProjects((prev) =>
-        prev.map((project) =>
-          project.id === updatedProject.id ? updatedProject : project
-        )
-      );
+      setProjects((prev) => prev.map((project) => (project.id === updatedProject.id ? updatedProject : project)));
 
-      const favoriteProject = favoriteProjects.find(
-        (fav) => fav.id === updatedProject.id
-      );
+      const favoriteProject = favoriteProjects.find((fav) => fav.id === updatedProject.id);
       if (favoriteProject) {
         const updatedFavorite = {
           ...favoriteProject,
-          name: updatedProject.name,
+          name: updatedProject.name
         };
         await api.updateFavoriteProject(updatedFavorite);
-        setFavoriteProjects((prev) =>
-          prev.map((fav) =>
-            fav.id === updatedFavorite.id ? updatedFavorite : fav
-          )
-        );
+        setFavoriteProjects((prev) => prev.map((fav) => (fav.id === updatedFavorite.id ? updatedFavorite : fav)));
       }
     } catch (error) {
-      console.error("Error saving project:", error);
+      console.error('Error saving project:', error);
       throw error;
     }
   };
@@ -72,6 +57,6 @@ export const useProjects = () => {
     favoriteProjects,
     isLoading,
     error,
-    handleSave,
+    handleSave
   };
 };

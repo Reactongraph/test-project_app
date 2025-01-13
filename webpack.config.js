@@ -60,23 +60,6 @@ module.exports = {
         },
       }),
     ],
-    splitChunks: {
-      chunks: "all",
-      minSize: 20000,
-      maxSize: 244000,
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: "vendors",
-          chunks: "all",
-        },
-        commons: {
-          name: "commons",
-          chunks: "initial",
-          minChunks: 2,
-        },
-      },
-    },
     runtimeChunk: "single",
     usedExports: true,
   },
