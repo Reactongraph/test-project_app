@@ -1,22 +1,22 @@
-import React from 'react';
-import { Alert, Box } from '@mui/material';
+import React from "react";
+import { Alert } from "@mui/material";
+import styled from "styled-components";
+import { ERROR_SEVERITY } from "../../../constants";
+
+const StyledAlert = styled(Alert)`
+  margin: ${({ theme }) => theme.spacing(2)} 0;
+`;
 
 /**
- * Reusable error message component for displaying API and other errors
+ * Error message component to display error messages or alerts
  * @param {Object} props - Component props
  * @param {string} props.message - Error message to display
- * @param {string} props.severity - Error severity (error, warning, info, success)
+ * @param {('error'|'warning'|'info'|'success')} props.severity - Severity level of the error
  */
-const ErrorMessage = ({ message, severity = 'error' }) => {
+const ErrorMessage = ({ message, severity = ERROR_SEVERITY.ERROR }) => {
   if (!message) return null;
-  
-  return (
-    <Box sx={{ margin: '1rem 0' }}>
-      <Alert severity={severity}>
-        {message}
-      </Alert>
-    </Box>
-  );
+
+  return <StyledAlert severity={severity}>{message}</StyledAlert>;
 };
 
 export default ErrorMessage;

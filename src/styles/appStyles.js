@@ -5,22 +5,22 @@
  */
 export const createAppStyles = (isMobile) => ({
   container: {
-    display: "flex",
-    flexDirection: isMobile ? "column" : "row",
-    minHeight: "100vh",
-    width: "100%",
+    display: 'flex',
+    flexDirection: isMobile ? 'column' : 'row',
+    minHeight: '100vh',
+    width: '100%'
   },
   mainContent: {
-    marginTop: isMobile ? "100px" : 0,
-    marginLeft: isMobile ? 0 : "260px",
-    width: isMobile ? "100%" : "calc(100% - 260px)",
-    boxSizing: "border-box",
+    marginTop: isMobile ? '100px' : 0,
+    marginLeft: isMobile ? 0 : '260px',
+    width: isMobile ? '100%' : 'calc(100% - 260px)',
+    boxSizing: 'border-box'
   },
   sidebar: {
-    width: isMobile ? "100%" : "260px",
-    position: isMobile ? "relative" : "fixed",
+    width: isMobile ? '100%' : '260px',
+    position: isMobile ? 'relative' : 'fixed',
     top: 0,
     left: 0,
-    height: isMobile ? "auto" : "100vh",
-  },
+    height: isMobile ? 'auto' : '100vh'
+  }
 });

@@ -3,8 +3,8 @@ import {
   PROJECT_FORM_FIELDS,
   validateProject,
 } from "../../form-configs/project-form";
-import Form from "../atoms/common/Form";
 import FormField from "../atoms/common/FormField";
+import Form from "../atoms/common/Form";
 
 const ProjectForm = ({ initialData = {}, onSubmit, isLoading = false }) => {
   const [formData, setFormData] = useState(initialData);

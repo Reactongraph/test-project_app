@@ -2,7 +2,7 @@
   "projects": [
     {
       "id": "1",
-      "name": "Project Alpha",
+      "name": "Project Sigma",
       "startDate": "2023-01-01",
       "endDate": "2023-12-31",
       "manager": "Alice",
@@ -20,7 +20,7 @@
   "favoriteProjects": [
     {
       "id": "1",
-      "name": "Project Alpha"
+      "name": "Project Sigma"
     }
   ]
 }
